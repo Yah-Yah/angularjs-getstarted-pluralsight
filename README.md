@@ -16,7 +16,9 @@ a complete web development environment hosted in browser
 ## Only two requirements:
 
 ### <script> tag pointing to angularjs
+```
 <script src="angular.js"></script>
+```
 
 ### ng-app directive as an attribute added to html
 ```
