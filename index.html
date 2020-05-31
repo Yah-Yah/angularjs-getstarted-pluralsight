@@ -10,7 +10,10 @@
           data-semver="1.3.0-beta.5"
           src="https://code.angularjs.org/1.3.0-beta.5/angular.js"></script>
 </head>
-<body>
-  <h1>Hello world of AngularJS!</h1>
+<!-- STEP_01 add controller directive to the section of html I want to manage with it -->
+<body ng-controller="MainCtrl">
+  <!-- STEP_03 now we can data bind expression to the website -->
+  <h1>{{ message }}</h1>
+  <p>this title has {{ message.length }} characters</p>
 </body>
 </html>
