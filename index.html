@@ -13,9 +13,7 @@
 <body ng-controller="MainCtrl">
   <h1>{{ message }}</h1>
   <p>this title has {{ message.length }} characters</p>
-  <!-- STEP_07 show reasons why http call failed: -->
   <h2>{{ error }}</h2>
-  <!-- STEP_05 data bind properties now available to user -->
   <h2>This page is made by {{user.name}} in {{user.location}} last updated on {{user.updated_at}}</h2>
   <img ng-src="{{user.avatar_url}}" alt="{{user.name}}" title="well, well, well, isn't it professional now?">
 </body>
