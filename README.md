@@ -45,3 +45,15 @@ AngularJS will invoke this function when it needs to create the controller to ma
 When AngularJS creates that controller it can pass in a parameter to that function `$scope`
 We can assign model to that `$scope` argument - so `$scope` is not a model, but things that are attached to it will be a model
 in the example we assigned a single property `.message` and apponted a string `"Hello!"` to it. That makes message available to us inside html so we can data bind it into a display
+
+### Responsibilities:
+Primary responsibility of a controller is to setup a model on a $scope object
+AngularJS passes $scope into controller function and then controller manipulates that $scope.
+That's why controller never has to directly manipulate html - the view - it only manipulates a $scope by attaching a model. Then it uses binding expressions to move data form $scope into the view.
+We can also setup methods that react to events through directive.
+
+### Capabilities:
+* multiple controllers in one html page
+* complex objects
+* nested controllers
+* controllers can be used to manipulate attributes too `<img src="{{chart.source}}">

@@ -13,5 +13,12 @@
 <body ng-controller="MainCtrl">
   <h1>{{ message }}</h1>
   <p>this title has {{ message.length }} characters</p>
+  <!-- STEP_03 data bind models to the html elements -->
+  <h2>This page is authored by {{person.firstName}} {{person.lastName}}</h2>
+  <!-- STEP_04 browsers see src="" before angualrJS swaps databinding expression with the content,
+    so with code below, the website will display an image but console will also show error "net::ERR_FILE_NOT_FOUND" -->
+  <!-- <img src="{{person.imgSrc}}" alt="{{person.firstName}}" title="yeah, this is totally how she looks like, adorable!"> -->
+  <!-- STEP_05 that's why we're using directive ng-src -->
+  <img ng-src="{{person.imgSrc}}" alt="{{person.firstName}}" title="yeah, this is totally how she looks like, adorable!">
 </body>
 </html>
