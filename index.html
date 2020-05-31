@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<!-- STEP_03 Bootstrap module -->
+<html lang="en" ng-app="githubViewer">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Title</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
   <script data-require="angular.js@"
           data-semver="1.3.0-beta.5"
           src="https://code.angularjs.org/1.3.0-beta.5/angular.js"></script>
+  <!-- NOTE: Had to move reference to my script that calls angular object below inclusion of angularJS library -->
+  <script src="script.js"></script>
 </head>
 <body ng-controller="MainCtrl">
   <h1>{{ message }}</h1>

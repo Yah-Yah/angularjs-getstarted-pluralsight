@@ -102,4 +102,33 @@ var PersonController = function($scope, $http) {
 }
 ```
 
+## Modules
+Controllers shouldn't be in a global scope, they live inside angularJS module.
+Javascript modules in general provide a container for functions to exist not in a global scope.
 
+### 1. Define a module with a name
+We create named module with angular api - `angular` object is a one single identifier in a global namespace, and it has methods like .module that allows us to create modules.
+To create a module we pass a name of a module as a first argument, and then as a second argument we pass an array of dependencies for that module (in case this module depends on features from other modules). If our module doesn't have any other dependencies we leave an empty array.
+Passing dependencies is important becasue without the second parameter (even if it's just an empty array) we'd be asking angularJS for the reference to already created module.
+```
+  const app = angular.module("githubViewer", []);
+```
+
+### 2. Register module
+Once that module defined, there's an api on that module object that alows us to register our controller with that module.
+The function that does that registration is `.controller`
+at the end of the .js file with our controller we pass a name of our controller as a string and then function that we use for the controller
+```
+const MainCtrl = function($scope) {
+  // ...
+}
+
+app.controller("MainCtrl", MainCtrl);
+```
+
+### 3. Bootstrap module
+Now we need to tell angularJS about this module, we do that by passing name of our module into an ng-app attrinute in html file
+
+```
+<html ng-app="githubViewer">
+```
